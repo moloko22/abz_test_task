@@ -1,0 +1,22 @@
+.registration_header {
+    width: 55%;
+}
+.registration_header h3 {
+    width: 95%;
+    min-height: 50px;
+    color: #212529;
+    font-size: 50px;
+    font-weight: 400;
+    text-align: center;
+}
+.registration_header p {
+    margin-top: 10px;
+    text-align: center;
+    width: 45%;
+    height: 41px;
+    color: #4c4b4b;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+

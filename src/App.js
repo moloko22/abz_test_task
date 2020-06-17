@@ -1,10 +1,20 @@
 import React from 'react';
-import './App.css';
 
+import AboutMe from "./components/AboutMe/AboutMe";
+import Header from "./components/Header/Header";
+import Registration from "./components/Registration/Registration";
+import CheerfulUsers from "./components/CheerfulUsers/CheerfulUsers";
+
+import './App.css';
+import Footer from "./components/Footer/Footer";
 function App() {
   return (
-    <div className="App">
-      <h3>Hello World!</h3>
+    <div className="app">
+        <Header/>
+        <AboutMe/>
+        <CheerfulUsers/>
+        <Registration />
+        <Footer/>
     </div>
   );
 }

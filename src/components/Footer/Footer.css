@@ -1,0 +1,23 @@
+footer {
+    width: 100%;
+    min-height: 60px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+footer p {
+    color: #4c4b4b;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+footer:before {
+    content: "";
+    min-height: 1px;
+    position: relative;
+    top: -15px;
+    width: 100%;
+    border-top: 1px solid #ececec;
+}
