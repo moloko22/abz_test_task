@@ -1,55 +1,56 @@
 .registration_form {
-    margin-top: 45px;
-    width: 100%;
+  margin-top: 45px;
+  width: 100%;
 }
-
 .registration_form form {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  min-height: 600px;
+}
+.registration_form form button {
+  margin-top: 20px;
+  width: 210px;
+  min-height: 38px;
+  border-radius: 4px;
+  background-color: #ef5b4c;
+  color: #fefefe;
+  font-size: 16px;
+  font-weight: 400;
+  border: none;
 }
 
-.form_name, .form_phone, .form_email, .form_position, .form_photo{
-    margin-bottom: 25px;
+.form_name, .form_phone, .form_email, .form_position, .form_photo {
+  margin-bottom: 25px;
 }
 
 .form_name label, .form_phone label, .form_email label, .form_position span, .form_photo label, .form_photo p {
-    margin-bottom: 10px;
-    width: 52%;
+  margin-bottom: 10px;
+  width: 52%;
 }
 
 .form_phone span {
-    margin-top: 10px;
-    width: 52%;
-    min-height: 13px;
-    color: #212529;
-    font-size: 12px;
-    font-weight: 400;
+  margin-top: 10px;
+  width: 52%;
+  min-height: 13px;
+  color: #212529;
+  font-size: 12px;
+  font-weight: 400;
 }
 
 .form_first_block input {
-    width: 52%;
-    min-height: 38px;
-    border-radius: 4px;
-    border: 1px solid #ced4da;
-    background-color: #ffffff;
-}
-.form_position div {
-    width: 52%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  width: 52%;
+  min-height: 38px;
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+  background-color: #ffffff;
 }
 
-.registration form button {
-    margin-top: 20px;
-    width: 210px;
-    min-height: 38px;
-    border-radius: 4px;
-    background-color: #ef5b4c;
-    color: #fefefe;
-    font-size: 16px;
-    font-weight: 400;
-    border: none;
+.form_position div {
+  width: 52%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
+
+/*# sourceMappingURL=RegisterForm.css.map */

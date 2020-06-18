@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './CheerfulUserItem.css';
+import './CheerfulUserItem.scss';
 
 export default function CheerfulUserItem (props){
     const {id, name, position, email, phone,photo} = props;

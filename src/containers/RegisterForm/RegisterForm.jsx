@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
-import './RegisterForm.css';
-import '../../CustomCss/CustomRadioInput.css';
-import '../../CustomCss/CustomFileInput.css';
+import './RegisterForm.scss';
+import '../../CustomCss/CustomRadioInput.scss';
+import '../../CustomCss/CustomFileInput.scss';
 class RegisterForm extends Component {
     handleSubmit(e){
         e.preventDefault();

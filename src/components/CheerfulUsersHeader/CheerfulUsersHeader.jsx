@@ -1,10 +1,10 @@
 import React from 'react';
 
-import './CheerfulUsersHeader.css';
+import './CheerfulUsersHeader.scss';
 export default function CheerfulUsersHeader(){
     return(
         <div className={'cheerful_users_header'}>
-            <h3>Our cheerful users</h3>
+            <h1>Our cheerful users</h1>
             <p>Attention! Sorting users by registration date</p>
         </div>
     )

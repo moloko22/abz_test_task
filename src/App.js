@@ -5,7 +5,7 @@ import Header from "./components/Header/Header";
 import Registration from "./components/Registration/Registration";
 import CheerfulUsers from "./components/CheerfulUsers/CheerfulUsers";
 
-import './App.css';
+import './App.scss';
 import Footer from "./components/Footer/Footer";
 function App() {
   return (

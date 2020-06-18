@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Registration.css';
+import './Registration.scss';
 import RegistrationHeader from "../RegistrationHeader/RegistrationHeader";
 import RegisterForm from "../../containers/RegisterForm/RegisterForm";
 

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import './CheerfulUsers.css';
+import './CheerfulUsers.scss';
 import Users from '../../Users';
 import CheerfulUsersHeader from "../CheerfulUsersHeader/CheerfulUsersHeader";
 import CheerfulUsersList from "../CheerfulUsersList/CheerfulUsersList";

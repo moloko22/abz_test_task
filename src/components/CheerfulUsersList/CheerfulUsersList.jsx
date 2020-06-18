@@ -1,7 +1,7 @@
 import React from 'react';
 
 import CheerfulUserItem from "../CheerfulUserItem/CheerfulUserItem";
-import './CheerfulUsersList.css';
+import './CheerfulUsersList.scss';
 function CheerfulUsersList(props){
     const {list} = props;
     function generateList(arr){

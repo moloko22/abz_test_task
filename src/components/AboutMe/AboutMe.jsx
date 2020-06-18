@@ -1,14 +1,14 @@
 import React from 'react';
 
-import './AboutMe.css';
+import './AboutMe.scss';
 export default function AboutMe(){
     return (
         <div className={'about_me'}>
-            <h2>Let's get acquainted</h2>
+            <h1>Let's get acquainted</h1>
             <div className={'about_me_info'}>
                 <div></div>
                 <div>
-                    <h3>I am cool frontend developer</h3>
+                    <h2>I am cool frontend developer</h2>
                     <p>We will evaluate how clean your approach to writing CSS and Javascript code is.
                         You can use any CSS and Javascript 3rd party libraries without any restriction.
 
