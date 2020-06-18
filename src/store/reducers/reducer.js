@@ -1,4 +1,5 @@
 const initialState = {
+    token: '',
     positions: [],
     usersList: [],
     nextUrl: '',
@@ -14,6 +15,11 @@ export default function list (state = initialState, action){
         case 'GET_POSITIONS': {
             const newState = Object.assign({}, state);
             newState.positions = state.positions.concat(action.payload.positions);
+            return newState;
+        }
+        case 'GET_TOKEN': {
+            const newState = Object.assign({}, state);
+            newState.token = action.payload.token;
             return newState;
         }
         default: return state;
