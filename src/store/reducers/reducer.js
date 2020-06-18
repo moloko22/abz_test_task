@@ -1,4 +1,5 @@
 const initialState = {
+    positions: [],
     usersList: [],
     nextUrl: '',
 };
@@ -8,7 +9,11 @@ export default function list (state = initialState, action){
             const newState = Object.assign({}, state);
             newState.usersList = state.usersList.concat(action.payload.users);
             newState.nextUrl = action.payload.links.next_url;
-            console.log(newState.usersList);
+            return newState;
+        }
+        case 'GET_POSITIONS': {
+            const newState = Object.assign({}, state);
+            newState.positions = state.positions.concat(action.payload.positions);
             return newState;
         }
         default: return state;

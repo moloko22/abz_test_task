@@ -1,12 +1,19 @@
 import React, {Component} from 'react';
 
+import {connect} from "react-redux";
 import './RegisterForm.scss';
-import '../../CustomCss/CustomRadioInput.scss';
+
 import '../../CustomCss/CustomFileInput.scss';
+import {getPositions} from "../../store/actions/GetPosition";
+import PositionList from "../../components/PositionsList/PositionsList";
+
 class RegisterForm extends Component {
+    componentDidMount() {
+        this.props.getPositions();
+    }
+
     handleSubmit(e){
         e.preventDefault();
-        console.log(e);
     }
     render() {
         return (
@@ -26,27 +33,7 @@ class RegisterForm extends Component {
                             <input type="text" name={'phone_number'}/>
                             <span>Enter phone number is open format</span>
                         </div>
-                        <div className={'form_position'}>
-                            <span>Select your position</span>
-                            <div>
-                                <div className="radio">
-                                    <input className="custom-radio" type="radio" id="position-1" name="position" value="Frontend developer"/>
-                                    <label htmlFor="position-1">Frontend developer</label>
-                                </div>
-                                <div className="radio">
-                                    <input className="custom-radio" type="radio" id="position-2" name="position" value="Backend developer"/>
-                                    <label htmlFor="position-2">Backend developer</label>
-                                </div>
-                                <div className="radio">
-                                    <input className="custom-radio" type="radio" id="position-3" name="position" value="Designer"/>
-                                    <label htmlFor="position-3">Designer</label>
-                                </div>
-                                <div className="radio">
-                                    <input className="custom-radio" type="radio" id="position-4" name="position" value="QA" />
-                                    <label htmlFor="position-4">QA</label>
-                                </div>
-                            </div>
-                        </div>
+                        <PositionList positions={this.props.positions}/>
                         <div className={'form_photo'}>
                             <p>Photo</p>
                             <label className="file">
@@ -65,5 +52,11 @@ class RegisterForm extends Component {
         );
     }
 }
+const mapStateToProps = state => ({
+    positions: state.positions,
+});
+const mapDispatchToProps = dispatch => ({
+    getPositions: () => dispatch(getPositions()),
+});
 
-export default RegisterForm;
+export default connect(mapStateToProps, mapDispatchToProps)(RegisterForm);

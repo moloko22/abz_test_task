@@ -1,6 +1,7 @@
+import URLS from '../URLS';
 export const getUsers = (url) => dispatch =>{
     if(typeof url !== 'object' && !url) {
-        url = 'https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=6';
+        url = URLS.GET_USERS_URL;
     }
     return fetch(url)
         .then(res => {
