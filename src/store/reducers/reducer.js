@@ -1,4 +1,5 @@
 const initialState = {
+    lastTokenTime: 0,
     token: '',
     positions: [],
     usersList: [],
@@ -20,6 +21,7 @@ export default function list (state = initialState, action){
         case 'GET_TOKEN': {
             const newState = Object.assign({}, state);
             newState.token = action.payload.token;
+            newState.lastTokenTime = new Date().getTime() / 1000;
             return newState;
         }
         default: return state;

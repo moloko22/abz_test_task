@@ -17,15 +17,12 @@ class RegisterForm extends Component {
         if(name === 'position_id'){
             this.formData.delete(name);
             this.formData.append(name, id);
-            console.log(this.formData.getAll(name));
         }else if(name === 'photo'){
             this.formData.delete(name);
             this.formData.append(name, e.target.files[0]);
-            console.log(this.formData.getAll(name));
         }else{
             this.formData.delete(name);
             this.formData.append(name, value);
-            console.log(this.formData.getAll(name));
         }
         return this.formData;
     };
@@ -34,8 +31,7 @@ class RegisterForm extends Component {
     }
     async handleSubmit(e){
         e.preventDefault();
-        await this.props.getToken();
-        console.log(this.formData);
+        await this.props.getToken(this.props.lastTokenTime);
         return registration(this.formData, this.props.token);
     }
     render() {
@@ -88,6 +84,7 @@ class RegisterForm extends Component {
 const mapStateToProps = state => ({
     positions: state.positions,
     token: state.token,
+    lastTokenTime: state.lastTokenTime,
 });
 const mapDispatchToProps = dispatch => ({
     getPositions: () => dispatch(getPositions()),
