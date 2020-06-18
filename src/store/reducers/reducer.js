@@ -1,5 +1,6 @@
 const initialState = {
     lastTokenTime: 0,
+    tokenIsExpired: true,
     token: '',
     positions: [],
     usersList: [],
@@ -18,10 +19,18 @@ export default function list (state = initialState, action){
             newState.positions = state.positions.concat(action.payload.positions);
             return newState;
         }
+        case 'TOKEN_EXPIRED': {
+            const newState = Object.assign({}, state);
+            newState.lastTokenTime = 0;
+            newState.tokenIsExpired = true;
+            return newState;
+        }
         case 'GET_TOKEN': {
+            console.log(action.payload);
             const newState = Object.assign({}, state);
             newState.token = action.payload.token;
             newState.lastTokenTime = new Date().getTime() / 1000;
+            newState.tokenIsExpired = false;
             return newState;
         }
         default: return state;

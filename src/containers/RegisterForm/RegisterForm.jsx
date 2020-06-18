@@ -31,8 +31,8 @@ class RegisterForm extends Component {
     }
     async handleSubmit(e){
         e.preventDefault();
-        await this.props.getToken(this.props.lastTokenTime);
-        return registration(this.formData, this.props.token);
+        await this.props.getToken(this.props.lastTokenTime, this.props.tokenIsExpired);
+        return this.props.registration(this.formData, this.props.token);
     }
     render() {
         return (
@@ -85,10 +85,12 @@ const mapStateToProps = state => ({
     positions: state.positions,
     token: state.token,
     lastTokenTime: state.lastTokenTime,
+    tokenIsExpired: state.tokenIsExpired,
 });
 const mapDispatchToProps = dispatch => ({
     getPositions: () => dispatch(getPositions()),
-    getToken: () => dispatch(getToken()),
+    registration: (obj, token) => dispatch(registration(obj, token)),
+    getToken: (lastTime, tokenIsExpired) => dispatch(getToken(lastTime, tokenIsExpired)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RegisterForm);
