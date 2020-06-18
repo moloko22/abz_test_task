@@ -18,7 +18,7 @@ export default function AboutMe(){
                         will get bonus points. If you use any task runner (gulp/webpack) you will get bonus points as well.
                         Slice service directory page P​SD mockup​ into HTML5/CSS3.
                     </p>
-                    <a href="#">Sign up now</a>
+                    <a href="#registration">Sign up now</a>
                 </div>
             </div>
         </div>

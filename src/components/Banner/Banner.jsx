@@ -11,7 +11,7 @@ export default function Banner(){
                     requirements. We look forward to your submission. Good luck! The photo has to scale in the banner
                     area on the different screens
                 </p>
-                <a href="#">Sing up now</a>
+                <a href="#registration">Sing up now</a>
             </div>
         </div>
     )
