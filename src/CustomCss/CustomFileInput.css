@@ -1,0 +1,46 @@
+.file {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  min-height: 20px;
+}
+
+.file-custom {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 5;
+  min-height: 25px;
+  padding: 10px;
+  line-height: 1.5;
+  color: #555;
+  background-color: #fff;
+  border: 0.075rem solid #ddd;
+  border-radius: 5px;
+}
+
+.file-custom:after {
+  content: "Upload your photo";
+}
+
+.file-custom:before {
+  position: absolute;
+  top: -0.075rem;
+  right: -0.075rem;
+  bottom: -0.075rem;
+  z-index: 6;
+  display: block;
+  content: "Browse";
+  min-height: 20px;
+  padding: 8px 15px;
+  border-radius: 0 4px 4px 0;
+  border: 1px solid #d4d9de;
+  background-color: #f8f7f5;
+  color: #212529;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+/*# sourceMappingURL=CustomFileInput.css.map */

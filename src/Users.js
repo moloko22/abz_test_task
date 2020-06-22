@@ -1,0 +1,51 @@
+const Users = [
+    {
+        id: 1,
+        name: 'Maximillian',
+        position: 'Leading specialist of the Control Departmant',
+        email: 'controldepartment@gmail.com',
+        phone: '+380 50 678 03 24',
+        photo: 'https://st4.depositphotos.com/1477081/24562/v/1600/depositphotos_245628924-stock-illustration-cute-hand-drawn-mouse-isolated.jpg',
+    },
+    {
+        id: 2,
+        name: 'Adolph Blaine Charles David Earl Matthew Matthew',
+        position: 'Contexual asdvertising specialist',
+        email: 'adolph.blainecharles@gmail.com',
+        phone: '+380636397471',
+        photo: 'https://st4.depositphotos.com/1477081/24562/v/1600/depositphotos_245628924-stock-illustration-cute-hand-drawn-mouse-isolated.jpg',
+    },
+    {
+        id: 3,
+        name: 'Elizabeth',
+        position: 'Frontend developer',
+        email: 'elizabenth.front@gmail.com',
+        phone: '+380636397471',
+        photo: 'https://st4.depositphotos.com/1477081/24562/v/1600/depositphotos_245628924-stock-illustration-cute-hand-drawn-mouse-isolated.jpg',
+    },
+    {
+        id: 4,
+        name: 'Alexsander Jayden',
+        position: 'Backend developer',
+        email: 'alexander.back@gmail.com',
+        phone: '+380636397471',
+        photo: 'https://st4.depositphotos.com/1477081/24562/v/1600/depositphotos_245628924-stock-illustration-cute-hand-drawn-mouse-isolated.jpg',
+    },
+    {
+        id: 5,
+        name: 'Noah',
+        position: 'QA',
+        email: 'noah1998@gmail.com',
+        phone: '+380636397471',
+        photo: 'https://st4.depositphotos.com/1477081/24562/v/1600/depositphotos_245628924-stock-illustration-cute-hand-drawn-mouse-isolated.jpg',
+    },
+    {
+        id: 6,
+        name: 'Liamgrievescasey Smith Wiam',
+        position: 'Lead designer',
+        email: 'liamgrievescasey.smith@gmail.com',
+        phone: '+380636397471',
+        photo: '',
+    },
+];
+export default Users;

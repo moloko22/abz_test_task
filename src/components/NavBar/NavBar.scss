@@ -1,0 +1,30 @@
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    nav {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        ul{
+            margin-right: 15px;
+            width: 60%;
+            display: flex;
+            justify-content: space-around;
+            li {
+                list-style: none;
+                color: #212529;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 60px;
+            }
+        }
+    }
+}
+.logo {
+    background-image: url("../../assets/logo.png");
+    background-repeat: no-repeat;
+    width: 20%;
+    min-height: 40px;
+    margin: 20px 0 0 30px;
+}

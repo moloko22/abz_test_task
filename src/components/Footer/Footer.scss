@@ -1,0 +1,22 @@
+@import '../../mixins.scss';
+footer {
+    width: 100%;
+    min-height: 60px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p {
+        @include paragraph_1;
+        color: #4c4b4b;
+    }
+}
+footer:before {
+    content: "";
+    min-height: 1px;
+    position: relative;
+    top: -15px;
+    width: 100%;
+    border-top: 1px solid #ececec;
+}

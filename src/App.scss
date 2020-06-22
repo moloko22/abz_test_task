@@ -1,0 +1,8 @@
+@import 'mixins.scss';
+
+.app {
+    @include background_color;
+    position: relative;
+    width: 1024px;
+    min-height: 2500px;
+}

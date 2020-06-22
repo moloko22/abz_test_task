@@ -1,0 +1,23 @@
+.cheerful_users {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: space-around;
+  align-items: center;
+  width: 100%;
+  min-height: 1105px;
+  background-color: #f9f9f3;
+}
+.cheerful_users button {
+  margin-top: 35px;
+  width: 210px;
+  height: 38px;
+  border-radius: 4px;
+  background-color: #ef5b4c;
+  color: #fefefe;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+}
+
+/*# sourceMappingURL=CheerfulUsers.css.map */
