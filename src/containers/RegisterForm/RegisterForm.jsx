@@ -1,56 +1,72 @@
 import React, {Component} from 'react';
 
+import {connect} from "react-redux";
 import './RegisterForm.scss';
-import '../../CustomCss/CustomRadioInput.scss';
+
 import '../../CustomCss/CustomFileInput.scss';
+import {getPositions} from "../../store/actions/GetPosition";
+import PositionList from "../../components/PositionsList/PositionsList";
+import {registration} from "../../store/actions/registration";
+import {getToken} from "../../store/actions/getToken";
+
 class RegisterForm extends Component {
-    handleSubmit(e){
+    formData = new FormData();
+    onChangeInput = (e, id) =>{
+        const name = e.target.name;
+        const value = e.target.value;
+        if(name === 'position_id'){
+            this.formData.delete(name);
+            this.formData.append(name, id);
+        }else if(name === 'photo'){
+            this.formData.delete(name);
+            this.formData.append(name, e.target.files[0]);
+        }else{
+            this.formData.delete(name);
+            this.formData.append(name, value);
+        }
+        return this.formData;
+    };
+    componentDidMount() {
+        this.props.getPositions();
+    }
+    async handleSubmit(e){
         e.preventDefault();
-        console.log(e);
+        await this.props.getToken(this.props.lastTokenTime, this.props.tokenIsExpired);
+        return this.props.registration(this.formData, this.props.token);
     }
     render() {
         return (
             <div className={'registration_form'}>
-                <form action="/">
+                <form>
                     <div className={'form_first_block'}>
                         <div className={'form_name'}>
                             <label htmlFor="name">Name</label>
-                            <input type="text" name={'name'}/>
+                            <input type="text"
+                                   onChange={(e) => this.onChangeInput(e)}
+                                   name={'name'}/>
                         </div>
                         <div className={'form_email'}>
                             <label htmlFor="email">Email</label>
-                            <input type="email" name={'email'}/>
+                            <input type="email"
+                                   onChange={(e) => this.onChangeInput(e)}
+                                   name={'email'}/>
                         </div>
                         <div className={'form_phone'}>
                             <label htmlFor="phone_number">Phone number</label>
-                            <input type="text" name={'phone_number'}/>
+                            <input type="text"
+                                   onChange={(e) => this.onChangeInput(e)}
+                                   name={'phone'}/>
                             <span>Enter phone number is open format</span>
                         </div>
-                        <div className={'form_position'}>
-                            <span>Select your position</span>
-                            <div>
-                                <div className="radio">
-                                    <input className="custom-radio" type="radio" id="position-1" name="position" value="Frontend developer"/>
-                                    <label htmlFor="position-1">Frontend developer</label>
-                                </div>
-                                <div className="radio">
-                                    <input className="custom-radio" type="radio" id="position-2" name="position" value="Backend developer"/>
-                                    <label htmlFor="position-2">Backend developer</label>
-                                </div>
-                                <div className="radio">
-                                    <input className="custom-radio" type="radio" id="position-3" name="position" value="Designer"/>
-                                    <label htmlFor="position-3">Designer</label>
-                                </div>
-                                <div className="radio">
-                                    <input className="custom-radio" type="radio" id="position-4" name="position" value="QA" />
-                                    <label htmlFor="position-4">QA</label>
-                                </div>
-                            </div>
-                        </div>
+                        <PositionList positions={this.props.positions} onChangeInput={this.onChangeInput}/>
                         <div className={'form_photo'}>
                             <p>Photo</p>
                             <label className="file">
-                                <input type="file" id="file" aria-label="File browser example" />
+                                <input type="file"
+                                       name={'photo'}
+                                       onChange={(e) => this.onChangeInput(e)}
+                                       id="file"
+                                       aria-label="File browser example" />
                                     <span className="file-custom"></span>
                             </label>
                         </div>
@@ -65,5 +81,16 @@ class RegisterForm extends Component {
         );
     }
 }
+const mapStateToProps = state => ({
+    positions: state.positions,
+    token: state.token,
+    lastTokenTime: state.lastTokenTime,
+    tokenIsExpired: state.tokenIsExpired,
+});
+const mapDispatchToProps = dispatch => ({
+    getPositions: () => dispatch(getPositions()),
+    registration: (obj, token) => dispatch(registration(obj, token)),
+    getToken: (lastTime, tokenIsExpired) => dispatch(getToken(lastTime, tokenIsExpired)),
+});
 
-export default RegisterForm;
+export default connect(mapStateToProps, mapDispatchToProps)(RegisterForm);

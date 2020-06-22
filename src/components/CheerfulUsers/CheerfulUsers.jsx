@@ -1,31 +1,35 @@
 import React, {Component} from 'react';
 
+import {connect} from "react-redux";
 import './CheerfulUsers.scss';
-import Users from '../../Users';
+
 import CheerfulUsersHeader from "../CheerfulUsersHeader/CheerfulUsersHeader";
 import CheerfulUsersList from "../CheerfulUsersList/CheerfulUsersList";
+import {getUsers} from "../../store/actions/getUsers";
 
 class CheerfulUsers extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            list: [],
-        }
-    }
     componentDidMount() {
-        this.setState({
-            list: Users,
-        })
+        this.props.getUsers(this.props.nextUrl);
+    }
+    onClickHandle(){
+        this.props.getUsers(this.props.nextUrl);
     }
     render() {
         return (
             <div className={'cheerful_users'}>
                 <CheerfulUsersHeader/>
-                <CheerfulUsersList list={this.state.list}/>
-                <button>Show more</button>
+                <CheerfulUsersList list={this.props.usersList}/>
+                <button onClick={() => this.onClickHandle()}>Show more</button>
             </div>
         );
     }
 }
+const mapStateToProps = state => ({
+    usersList: state.usersList,
+    nextUrl: state.nextUrl,
+});
+const mapDispatchToProps = dispatch => ({
+    getUsers: (nextUrl) => dispatch(getUsers(nextUrl)),
+});
 
-export default CheerfulUsers;
+export default connect(mapStateToProps, mapDispatchToProps)(CheerfulUsers);
